@@ -5,7 +5,7 @@ const fs = require('fs')
 const port = 3000
 
 const saveData = (data) => {
-    const stringifyData = JSON.stringify(data)
+    const stringifyData = JSON.stringify(data,null,2)
     fs.writeFileSync('dbUser.json', stringifyData)
 }
 //get the user data from json file
@@ -14,12 +14,7 @@ const getUserData = () => {
     return JSON.parse(jsonData)    
 }
 
-router.use('/', function (req, res, next){
-    console.log('Time: ', Date())
-    console.log('Request URL: ', req.originalUrl)
-    console.log('Request Type: ', req.method)
-    next()
-})
+
 
 router.get('/', (req, res) => {
     const users = getUserData()
@@ -101,7 +96,15 @@ router.get('/search', (req, res, next) => {
             return searchRegExp.test(user[key]);
         }
     });
-    res.send(filteredUsers);
+    
+
+    if (filteredUsers.length == 0) {
+        res.status(404).send({ "message" : "Data Not Found" });
+    }else{
+        console.log(showUsers.length);
+        res.send(filteredUsers);
+    }
+    
 });
 
 module.exports = router

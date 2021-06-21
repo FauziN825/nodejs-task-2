@@ -1,1 +1,80 @@
-[{"id":1,"name":"Fauzi Faruq Nabbani","age":24,"address":"Jalan Gondomanan, Banana Homestay"},{"id":2,"name":"Faisal Siddiq","age":22,"address":"Jalan Cipicung RT 06 RW 08"},{"id":3,"name":"Ariena Rosyidiena","age":21,"address":"Jalan Cipides RT 06 RW 08"},{"id":4,"name":"Arissa Aprina","age":10,"address":"Jalan Cipicung Tasikmalaya RT 06 RW 08"},{"id":5,"name":"Diajeng Putri D","age":22,"address":"Jalan The Cluster Laora Land"},{"id":6,"name":"Faruq","age":23,"address":"Jalan Jogja santuy"},{"id":7,"name":"Faruq N","age":24,"address":"Jalan Jogja santuy"},{"id":8,"name":"Faruq N","age":24,"address":"Jalan Jogja santuy"},{"id":9,"name":"Faruq Fauzi","age":24,"address":"Jalan ugm santuy"},{"id":10,"name":"Faruq Mitrais","age":24,"address":"Jalan test santuy"},{"id":11,"name":"Faruq Junior Programmer","age":25,"address":"Jalan menuju mitrais"},{"id":12,"name":"Yani Suryani","age":30,"address":"Jalan bandung raya"}]
+[
+  {
+    "id": 1,
+    "name": "Fauzi Faruq Nabbani",
+    "age": 24,
+    "address": "Jalan Gondomanan, Banana Homestay"
+  },
+  {
+    "id": 2,
+    "name": "Faisal Siddiq",
+    "age": 22,
+    "address": "Jalan Cipicung RT 06 RW 08"
+  },
+  {
+    "id": 3,
+    "name": "Ariena Rosyidiena",
+    "age": 21,
+    "address": "Jalan Cipides RT 06 RW 08"
+  },
+  {
+    "id": 4,
+    "name": "Arissa Aprina",
+    "age": 10,
+    "address": "Jalan Cipicung Tasikmalaya RT 06 RW 08"
+  },
+  {
+    "id": 5,
+    "name": "Diajeng Putri D",
+    "age": 22,
+    "address": "Jalan The Cluster Laora Land"
+  },
+  {
+    "id": 6,
+    "name": "Faruq",
+    "age": 23,
+    "address": "Jalan Jogja santuy"
+  },
+  {
+    "id": 7,
+    "name": "Faruq N",
+    "age": 24,
+    "address": "Jalan Jogja santuy"
+  },
+  {
+    "id": 8,
+    "name": "Faruq N",
+    "age": 24,
+    "address": "Jalan Jogja santuy"
+  },
+  {
+    "id": 9,
+    "name": "Faruq Fauzi",
+    "age": 24,
+    "address": "Jalan ugm santuy"
+  },
+  {
+    "id": 10,
+    "name": "Faruq Mitrais",
+    "age": 24,
+    "address": "Jalan test santuy"
+  },
+  {
+    "id": 11,
+    "name": "Faruq Junior Programmer",
+    "age": 25,
+    "address": "Jalan menuju mitrais"
+  },
+  {
+    "id": 12,
+    "name": "Yani Suryani",
+    "age": 30,
+    "address": "Jalan bandung raya"
+  },
+  {
+    "id": 15,
+    "name": "Jokowi",
+    "age": 61,
+    "address": "Jalan Cipedes Bojong Jakarta"
+  }
+]
