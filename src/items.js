@@ -8,12 +8,11 @@ const saveData = (data) => {
     const stringifyData = JSON.stringify(data,null,2)
     fs.writeFileSync('dbUser.json', stringifyData)
 }
-//get the user data from json file
+
 const getUserData = () => {
     const jsonData = fs.readFileSync('dbUser.json')
     return JSON.parse(jsonData)    
 }
-
 
 
 router.get('/', (req, res) => {
@@ -24,7 +23,6 @@ router.get('/', (req, res) => {
 router.get('/list/:id', (req,res) => {
     const items = getUserData()
     const accountid = Number(req.params.id)
-    // console.log(req.params.id)
     const getUserId = items.find((userid) => userid.id === accountid);
     if (!getUserId) {
         res.status(500).send('User Id not found.')
@@ -36,25 +34,18 @@ router.get('/list/:id', (req,res) => {
 
 
 router.post('/', (req, res) => {
-    //get the existing user data
     const existUsers = getUserData()
-    
-    //get the new user data from post request
     const userData = req.body
     console.log(userData)
-    //check if the userData fields are missing
     if (userData.id == null || userData.name == null || userData.age == null || userData.address == null) {
         return res.status(401).send({error: true, msg: 'User data missing'})
     }
     
-    //check if the username exist already
     const findExist = existUsers.find( id => id.id === userData.id )
     if (findExist) {
         return res.status(409).send({error: true, msg: 'id already exist'})
     }
-    //append the user data
     existUsers.push(userData)
-    //save the new user data
     saveData(existUsers);
     res.send({success: true, msg: 'User data added successfully'})
 })
@@ -64,12 +55,9 @@ router.delete('/delete/:id?', (req, res) => {
     const userid = req.params.id
     console.log(userid)
 
-    
-    //get the existing userdata
     const existUsers = getUserData()
     console.log(existUsers)
   
-    // //filter the userdata to remove it
     let filterUser = existUsers.filter( (x) => x.id != userid )
     console.log(filterUser)
 
@@ -81,8 +69,6 @@ router.delete('/delete/:id?', (req, res) => {
     res.send({success: true, msg: 'User removed successfully'})
     
 })
-
-
 
 router.get('/search', (req, res, next) => {
     const data = getUserData()
@@ -97,11 +83,9 @@ router.get('/search', (req, res, next) => {
         }
     });
     
-
     if (filteredUsers.length == 0) {
-        res.status(404).send({ "message" : "Data Not Found" });
+        res.status(404).send({error: true, msg: 'Data Not Found'})
     }else{
-        console.log(showUsers.length);
         res.send(filteredUsers);
     }
     

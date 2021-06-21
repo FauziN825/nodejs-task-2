@@ -17,6 +17,4 @@ const itemRouter = require('./src/items')
 app.use('/items',itemRouter)
 
 
-
-
-app.listen(port, () => console.log(`Example app listening on port port!`))
+app.listen(port, () => console.log(`listening on port 3000`))
